@@ -1,38 +1,495 @@
-.App {
+.app {
+  margin: 0;
+  font-family: Arial,Helvetica,sans-serif;
+  position: relative;
+}
+
+.app__logo {
+  position: fixed;
+  right: 2rem;
+  top: 40%;
+  display: flex;
+  flex-direction: column;
+}
+
+.app__logo > img {
+  margin-bottom: 2.5rem;
+  cursor: pointer;
+}
+
+.app > h1 {
+  margin: 0;
+  text-align: center;
+  margin-top: 70px;
+  margin-bottom: 5px;
+  letter-spacing: .1em;
+  font-size: 40px;
+  font-family: didot-w01-italic, serif;
+  font-weight: 500;
+  font-style: italic;
+}
+
+.app > h3 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  margin-bottom: 3.5rem;
+  font-size: 22px;
+  letter-spacing: 0.05em;
+  font-family: didot-w01-italic, serif;
+  font-weight: normal;
+  font-style: italic;
+}
+
+.app > h3 > hr{
+  width: 1.5%;
+}
+
+.img-1, .img-2 {
+  margin: auto;
+  width: 980px;
+  height: 700px;
+  background: url('./images/parallax-1.webp') center no-repeat;
+  background-size: contain;
+  background-attachment: fixed;
+  margin-bottom: 60px;
+}
+
+.app__date {
+  max-width: 950px;
+  margin: auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+  margin-bottom: 140px;
+}
+
+.app__date > div > p, .app__date > div:nth-child(3) > div > p{
+  font-size: .79rem;
+  color: #555;
+  margin-bottom: 3px;
+}
+
+.app__date .react-datepicker__input-container > input {
+  width: 242px;
+  height: 12px;
+  padding: .5rem 1rem;
+}
+
+.app__date > div > div > input[type='number']{
+  max-width: 50px;
+  height: 12px;
+  padding: .5rem 1rem;
+}
+
+.app__date > div:nth-child(3) {
+  display: flex;
+}
+
+.app__date > div:nth-child(3) > div:first-child {
+  margin-right: 7px;
+}
+
+.app__date > button {
+  background-color: #000;
+  border: none;
+  outline: 0;
+  cursor: pointer;
+  color: #fff;
+  padding: .65rem 1rem;
+  width: 182px;
+  font-size: .7rem;
+}
+
+.app__about {
+  max-width: 560px;
+  margin: auto;
+  text-align: center;
+  margin-bottom: 190px;
+}
+
+.app__about > h2{
+  font-size: 25px;
+  margin-bottom: 2.5rem;
+  font-weight: 100;
+  letter-spacing: .1px;
+  color: #888;
+}
+
+.app__about > p{
+  font-size: 15.5px;
+  line-height: 160%;
+  font-style: italic;
+  color: #bbb;
+}
+
+.img-2 {
+  background: url('./images/room.webp') center no-repeat;
+  background-size: contain;
+  background-attachment: fixed;
+  display: grid;
+  place-items: center;
+  margin-bottom: 190px;
+}
+
+.img-2 > div {
+  width: 294px;
+  height: 242px;
+  background-color: #fff;
+  text-align: center;
+  padding: 4rem 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.img-2 > div > h2, .app__todo > h2, .app__gallery > h2, .app__contact > h2 {
+  font-size: 25px;
+  margin: 0;
+  color: #777;
+  font-weight: 100;
+}
+
+.img-2 > div > p {
+  font-size: 1.05rem;
+  margin: 0;
+  line-height: 1.5rem;
+  font-style: italic; 
+  color: #aaa;
+}
+
+.img-2 > div > button {
+  background-color: transparent;
+  padding: .8rem 2rem;
+  outline: none;
+  border: none;
+  border: 1px solid #000;
+  cursor: pointer;
+  transition: all .2s ease-in;
+}
+
+.img-2 > div > button:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+.app__todo {
+  text-align: center;
+  max-width: 980px;
+  margin: auto;
+}
+
+.app__todo > h2 {
+  color: #444;
+  margin-bottom: 3rem;
+}
+
+.app__todo > div{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: 5rem;
+  grid-row-gap: 3rem;
+  margin-bottom: 100px;
+}
+
+.app__todo > div > div > h4 {
+  font-size: 1.15rem;
+  font-weight: 100;
+  color: #444;
+  margin-bottom: 1.2rem;
+}
+
+.app__todo > div > div > p {
+  margin: 0;
+  line-height: 150%;
+  font-style: italic;
+  color: #888;
+  font-size: 1.05rem;
+}
+
+.app__gallery {
+  max-width: 980px;
+  margin: auto;
+  text-align: center;
+  margin-bottom: 200px;
+}
+
+.app__gallery > h2 {
+  margin-bottom: 3.5rem;
+}
+
+.app__gallery > div {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: .9rem;
+  place-items: center;
+}
+
+.app__gallery > div > img{
+  width: 100%;
+  background-size: contain;
+  transition: opacity 0.2s ease-in;
+  cursor: pointer;
+}
+
+.app__gallery > div > img:hover{
+  opacity: .8;
+}
+
+.app__contact {
+  background-color: #f5f5f5;
+  display: grid;
+  place-items: center;
+  padding: 6rem;
+}
+
+.app__contact > h2 {
+  color: #444;
+  margin-bottom: 2.5rem;
+}
+
+.app__contact > p {
+  font-size: 1.2rem;
+  font-style: italic;
+  font-weight: 100;
+  color: #aaa;
+  margin-bottom: 3.5rem;
+}
+
+.app__contact > p > span {
+  margin: 0 1.5rem;
+}
+
+.app__contact > p > span:nth-child(2) {
+  margin: 0 3rem;
+}
+
+.app__contact > form {
+  width: 574px;
+}
+
+.app__contact > form > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.app__contact > form > input, .app__contact > form > div > input, .app__contact > form > textarea {
+  width: 100%;
+  border: none;
+  outline: none;
+  margin-bottom: .7rem;
+  padding: .8rem;
+}
+
+.app__contact > form > div > input {
+  min-width: 46%;
+}
+
+.app__contact > form > div > input:first-child {
+  margin-right: 1.2rem;
+}
+
+.app__contact > form > textarea {
+  resize: none;
+  height: 150px;
+}
+
+.app__contact > form > button {
+  min-width: 104.5%;
+  outline: none;
+  border: none;
+  padding: 1rem;
+  color: #fff;
+  background-color: #000;
+  cursor: pointer;
+}
+
+.app__footer {
+  background-color: #242323;
+  color: darkgray;
+  padding: 1.5rem;
+  font-size: .9rem;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+@media(max-width: 1024px) {
+  .app__logo {
+    display: none;
+  }
+
+  .img-1, .img-2 {
+    background-attachment: unset;
+  }
+
+  .app__maps {
+    height: 50vh !important;
+  }
+
+  .app__contact {
+    padding: 6rem 0rem;
+  }
+
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@media(max-width: 1000px) {
+  .app {
+    overflow-x: hidden;
+  }
+
+  .img-1, .img-2 {
+    height: 500px;
+  }
+
+  .app > h1 {
+    margin-top: 150px;
+  }
+
+  .img-1, .img-2 {
+    width: 100vw;
+  }
+
+  .app__date {
+    display: grid;
+    place-items: center;
+  }
+
+  .app__date > div {
+    margin-bottom: 1rem;
+  }
+
+  .app__contact > p{
+    display: none;
+  }
+
+  .app__todo {
+    width: 95%;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media (max-width: 414px) {
+  .img-1, .img-2 {
+    height: 330px;
+    background-size: cover;
   }
-  to {
-    transform: rotate(360deg);
+
+  .app__date > div > div > input[type='number'] {
+    max-width: 100px;
+  }
+
+  .app > h1 {
+    margin-top: 40px;
+  }
+
+  .img-2 > div {
+    width: 250px;
+    height: 200px;
+    padding: 2rem;
+  }
+
+  .img-2 > div > p {
+    font-size: .9rem;
+  }
+  
+  .app > h3 > hr {
+    width: 17%;
+  }
+
+  .app__date, .app__about, .img-2, .app__gallery {
+      margin-bottom: 3rem;
+  }
+
+  .app__date > button {
+      width: 100%;
+      padding: .7rem;
+      font-size: 1rem;
+  }
+
+  .app__about > h2 {
+      margin-bottom: 1rem;
+  }
+
+  .app__about > p {
+      width: 80%;
+      margin: auto;
+      font-size: 1.1rem;
+      color: #aaa;
+  }
+
+  .app__todo > div {
+      grid-template-columns: 1fr;
+  }
+
+  .app__todo > div > div > p {
+      width: 80%;
+      margin: auto;
+  }
+
+  .app__gallery > div {
+      grid-template-columns: 1fr 1fr;
+      grid-row-gap: 1rem;
+      max-width: 90%;
+      margin: auto;
+  }
+
+  .app__gallery > div > img {
+      height: 300px;
+      object-fit: cover;
+  }
+
+  .app__contact {
+    padding: 4rem 2rem;
+  }
+
+  .app__contact > form {
+    width: 100%;
+    margin: auto;
+  }
+
+  .app__contact > form > div {
+    display: block;
+  }
+
+  .app__contact > form > div > input:first-child {
+    margin-right: 0;
+  }
+
+  .app__contact > form > div > input {
+    min-width: auto;
+  }
+
+  .app__contact > form > input, .app__contact > form > div > input, 
+  .app__contact > form > textarea {
+    width: 92%;
+  }
+
+  .app__contact > form > button {
+    min-width: auto;
+    width: 100%;
+  }
+}
+
+@media(max-width: 320px) {
+  .app > h3 > hr {
+    width: 10%;
+  }
+
+  .app__about > p {
+    width: 85%;
+  }
+
+  .img-1, .img-2 {
+    height: 400px;
+  }
+
+  .img-2 > div {
+    padding: 2rem 1rem;
+  }
+
+  .app__contact > form > input, .app__contact > form > div > input,
+  .app__contact > form > textarea {
+    width: 89.5%;
   }
 }

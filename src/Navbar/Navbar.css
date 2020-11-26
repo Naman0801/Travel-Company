@@ -1,0 +1,125 @@
+.navbar {
+    height: 80px;
+    max-height: 80px;
+    background-color: #242323;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+}
+
+.navbar > img, .close__btn {
+    display: none;
+}
+
+.navbar__navLinks > a {
+    margin-right: 60px;
+    color: #fff;
+    text-transform: uppercase;
+    text-align: center;
+    text-decoration: none;
+    font-size: .9rem;
+    transition: color .3s ease-in;
+    cursor: pointer;
+}
+
+.navbar__navLinks > a:last-child {
+    margin-right: 30px;
+}
+
+.navbar__navLinks > a:hover {
+    color: darkgray;
+}
+
+.navbar__navLinks .active {
+    color: darkgray;
+}
+
+.navbar > button {
+    background: transparent;
+    color: #fff;
+    border: 1px solid #fff;
+    outline: none;
+    font-size: .9rem;
+    padding: .75rem 1.75rem;
+    cursor: pointer;
+    transition: all .2s ease-in;
+}
+
+.navbar > button:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+@media(max-width: 1000px) {
+    .navbar {
+        position: fixed;
+    }
+
+    .navbar__navLinks > a:last-child {
+        margin-right: 1.5rem;
+    }
+
+    .navbar__navLinks > a {
+        margin-right: 1.5rem;
+    }
+}
+
+@media (max-width: 767px) {
+    .navbar {
+        flex-direction: row-reverse;
+        position: unset;
+        justify-content: space-between;
+        padding: 0 2rem;
+    }
+
+    .navbar__navLinks {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        background-color: #242323;
+        top: 0;
+        z-index: 999;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        overflow: hidden;
+        transition: all .5s ease-in;
+    }
+
+    .close__btn {
+        display: block;
+        color: #888;
+        position: absolute;
+        top: 1.5rem;
+        right: 1.5rem;
+        font-size: 1.5rem;
+        border: 1px solid #888;
+        border-radius: 50px;
+        padding: 1rem 1.3rem;
+        font-weight: 700;
+    }
+
+    .navbar__navLinks > a {
+        margin: 0;
+        font-size: 1.1rem;
+        -webkit-tap-highlight-color: transparent;
+        margin-bottom: 2rem;
+    }
+
+    .navbar__navLinks > a:last-child {
+        margin-right: 0;
+    }
+
+    .navbar > img {
+        width: 80px;
+        display: block;
+        margin-right: 2rem;
+        cursor: pointer;
+        -webkit-tap-highlight-color: transparent;
+    }
+}
